@@ -10,7 +10,7 @@ RSpec.describe Page, type: :model do
     it { is_expected.to validate_uniqueness_of(:title) }
     it { is_expected.to validate_presence_of(:content) }
   end
-
+  
   describe "#slug" do
     let(:page) { create(:page, title: '--Foo Bar! _ 87 --') }
 
