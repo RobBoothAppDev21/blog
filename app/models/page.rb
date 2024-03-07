@@ -6,6 +6,9 @@ class Page < ApplicationRecord
 
   before_validation :make_slug
 
+  scope :published, -> { where(published: true) }
+  scope :ordered, -> { order(created_at: :desc) }
+
   private
 
   def make_slug
