@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'pages/show'
   root "home#index"
   get "page/:slug", to: "pages#show", slug: /[-a-z0-9+]*/, as: :page
+  get "/search", to: "search#index"
+  get "search/:year/:month", to: "search#index", year: /\d{4}/, month: /\d{2}/
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
